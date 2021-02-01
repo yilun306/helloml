@@ -22,7 +22,6 @@ from flask import jsonify
 # called `app` in `main.py`.
 app = Flask(__name__)
 
-# just add this line for push
 
 @app.route('/')
 def hello():
