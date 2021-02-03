@@ -1,14 +1,4 @@
-phases:
-  install:
-    runtime-versions:
-      python: 3.9
-  pre_build:
-    commands:
-      - python3.9 -m venv ~/.venv
-      - source ~/.venv/bin/activate
-      - make install
-      - make lint
-
-  build:
-    commands:
-      - make deploy
+steps:
+# Deploy container image to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['deploy', 'app']
