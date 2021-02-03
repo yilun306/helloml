@@ -1,21 +1,14 @@
-steps:
-- name: python:3.9
-  id: INSTALL
-  entrypoint: python3
-  args:
-  - '-m'
-  - 'pip'
-  - 'install'
-  - '-t'
-  - '.'
-  - '-r'
-  - 'requirements.txt'
-# - name: python:3.9
-#   entrypoint: ./pylint_runner
-#   id: LINT
-#   waitFor:
-#   - INSTALL
-- name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
-timeout: "1600s"
-images: ['gcr.io/helloml-303019/pylint']
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  pre_build:
+    commands:
+      - python3.9 -m venv ~/.venv
+      - source ~/.venv/bin/activate
+      - make install
+      - make lint
+
+  build:
+    commands:
+      - make deploy
