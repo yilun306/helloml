@@ -38,7 +38,7 @@ def html():
     """Returns some custom HTML"""
     return """
     <title>This is a Hello World World Page</title>
-    <p>Hello test</p>
+    <p>Hello test2</p>
     <p><b>World</b></p>
     """
 
