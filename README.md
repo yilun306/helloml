@@ -29,3 +29,43 @@ pip install -r requirement.txt
 ```bash
 python main.py
 ```
+
+7. update main.py
+```python
+from flask import Flask
+from flask import jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    """Return a friendly HTTP greeting."""
+    return 'Hello I like to make AI Apps'
+
+@app.route('/name/<value>')
+def name(value):
+    val = {"value": value}
+    return jsonify(val)
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
+```
+
+8. Deploy the flask app:
+```bash
+gcloud app deploy
+```
+    it should look like this:
+    ```bash
+    Setting traffic split for service [default]...done.
+    Deployed service [default] to [https://helloml-xxx.appspot.com]
+    You can stream logs from the command line by running:
+      $ gcloud app logs tail -s default
+
+      $ gcloud app browse
+    (venv) noah_gift@cloudshell:~/python-docs-samples/appengine/standard_python37/hello_world (helloml-242121)$ gcloud app
+     logs tail -s default
+    Waiting for new log entries...
+    ```
+
+## Continuous delivery setup
