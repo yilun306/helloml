@@ -38,8 +38,8 @@ def html():
     """Returns some custom HTML"""
     return """
     <title>This is a Hello World World Page</title>
-    <p>Hello test2</p>
-    <p><b>World (project1)</b></p>
+    <p>Hello</p>
+    <p><b>World</b></p>
     """
 
 # @app.route('/pandas')
