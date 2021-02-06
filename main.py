@@ -39,7 +39,7 @@ def html():
     return """
     <title>This is a Hello World World Page</title>
     <p>Hello test2</p>
-    <p><b>World</b></p>
+    <p><b>World (project1)</b></p>
     """
 
 # @app.route('/pandas')
