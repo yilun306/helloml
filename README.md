@@ -69,3 +69,15 @@ gcloud app deploy
     ```
 
 ## Continuous delivery setup
+
+1. Create a cloud build yaml file:
+    ```yaml
+    steps:
+    - name: "gcr.io/cloud-builders/gcloud"
+      args: ["app", "deploy"]
+    ```
+
+2. Follow steps in this tutorial:
+    ```url
+    https://cloud.google.com/cloud-build/docs/automating-builds/create-github-app-triggers
+    ```
